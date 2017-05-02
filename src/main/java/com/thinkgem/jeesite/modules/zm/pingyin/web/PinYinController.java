@@ -3,20 +3,20 @@
  */
 package com.thinkgem.jeesite.modules.zm.pingyin.web;
 
+import java.io.FileNotFoundException;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.github.stuxuhai.jpinyin.PinyinException;
+import com.github.stuxuhai.jpinyin.PinyinFormat;
+import com.github.stuxuhai.jpinyin.PinyinHelper;
 import com.thinkgem.jeesite.common.web.BaseController;
 import com.thinkgem.jeesite.modules.zm.pingyin.entity.Hanyu;
 import com.thinkgem.jeesite.modules.zm.pingyin.entity.PinYin;
 
-import net.sourceforge.pinyin4j.PinyinHelper;
-import net.sourceforge.pinyin4j.format.HanyuPinyinOutputFormat;
-import net.sourceforge.pinyin4j.format.HanyuPinyinToneType;
-import net.sourceforge.pinyin4j.format.HanyuPinyinVCharType;
-import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
 
 /**
  * 测试Controller
@@ -36,16 +36,27 @@ public class PinYinController extends BaseController {
 
 	@RequestMapping(value = "trans")
 	public String save(PinYin pinyin, Model model, RedirectAttributes redirectAttributes) {
-		Hanyu hanyu = new Hanyu();
-		String pinYinContent = hanyu.getStringPinYin(pinyin.getContent());
-		pinyin.setContentResult(pinYinContent);
-		return form(pinyin, model);
-//		if (!beanValidator(model, pinyin)){
-//			return form(pinyin, model);
+//		Hanyu hanyu = new Hanyu();
+//		String pinYinContent = hanyu.getStringPinYin(pinyin.getContent());
+//		pinyin.setContentResult(pinYinContent);
+		
+//		try {
+//			PinyinHelper.addPinyinDict("user.dict");
+//		} catch (FileNotFoundException e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
 //		}
-//		testService.save(test);
-		//addMessage(redirectAttributes, "保存测试'" + pinyin.getName() + "'成功");
-		//return "redirect:" + adminPath + "/test/test/?repage";
+		
+		String contentResult = "";
+		    try {
+		    	contentResult = PinyinHelper.convertToPinyinString(pinyin.getContent(), ",", PinyinFormat.WITH_TONE_MARK);
+		    	
+			} catch (PinyinException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		    pinyin.setContentResult(contentResult);
+		return form(pinyin, model);
 	}
 	
 }
