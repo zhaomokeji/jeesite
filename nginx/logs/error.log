@@ -1,0 +1,79 @@
+2017/05/03 11:29:02 [error] 11536#10080: *1 CreateFile() "E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2017/05/03 14:02:59 [notice] 10280#12012: signal process started
+2017/05/03 14:04:26 [notice] 5564#11524: signal process started
+2017/05/03 14:16:54 [error] 11528#11732: *3 upstream timed out (10060: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond) while connecting to upstream, client: 127.0.0.1, server: www.mail.com, request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8090/", host: "www.mail.com"
+2017/05/03 14:17:54 [error] 11528#11732: *3 upstream timed out (10060: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond) while connecting to upstream, client: 127.0.0.1, server: www.mail.com, request: "GET /favicon.ico HTTP/1.1", upstream: "http://127.0.0.1:8090/favicon.ico", host: "www.mail.com", referrer: "http://www.mail.com/"
+2017/05/03 14:26:29 [notice] 8408#11080: signal process started
+2017/05/03 14:27:25 [notice] 9684#10628: signal process started
+2017/05/03 14:28:28 [notice] 10808#10408: signal process started
+2017/05/03 14:29:25 [notice] 5608#7132: signal process started
+2017/05/03 14:29:25 [error] 5608#7132: CreateFile() "E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/05/03 14:29:33 [notice] 7008#11852: signal process started
+2017/05/03 14:29:33 [error] 7008#11852: CreateFile() "E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/05/03 14:34:02 [notice] 12008#11400: signal process started
+2017/05/03 14:34:02 [error] 12008#11400: CreateFile() "E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/05/03 14:34:11 [notice] 8640#11804: signal process started
+2017/05/03 14:34:11 [error] 8640#11804: CreateFile() "E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/05/03 15:04:21 [notice] 11892#10628: signal process started
+2017/05/03 15:05:44 [error] 9532#8720: *7 upstream timed out (10060: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond) while connecting to upstream, client: 127.0.0.1, server: www.mail.com, request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8090/", host: "www.mail.com"
+2017/05/03 15:06:44 [error] 9532#8720: *7 upstream timed out (10060: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond) while connecting to upstream, client: 127.0.0.1, server: www.mail.com, request: "GET /favicon.ico HTTP/1.1", upstream: "http://127.0.0.1:8090/favicon.ico", host: "www.mail.com", referrer: "http://www.mail.com/"
+2017/05/03 15:15:40 [notice] 10220#11336: signal process started
+2017/05/05 18:02:46 [emerg] 9936#10068: pcre_compile() failed: nothing to repeat in "\.(*)$" at "*)$" in E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/conf/nginx.conf:91
+2017/05/05 18:02:57 [emerg] 7152#8340: pcre_compile() failed: nothing to repeat in "\.(*)$" at "*)$" in E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/conf/nginx.conf:91
+2017/05/05 18:03:00 [emerg] 11608#7064: pcre_compile() failed: nothing to repeat in "\.(*)$" at "*)$" in E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/conf/nginx.conf:91
+2017/05/05 18:03:02 [emerg] 11192#13480: pcre_compile() failed: nothing to repeat in "\.(*)$" at "*)$" in E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/conf/nginx.conf:91
+2017/05/05 18:03:05 [emerg] 6744#13816: pcre_compile() failed: nothing to repeat in "\.(*)$" at "*)$" in E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/conf/nginx.conf:91
+2017/05/05 18:03:56 [emerg] 13896#12472: pcre_compile() failed: nothing to repeat in "\.(*)$" at "*)$" in E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/conf/nginx.conf:91
+2017/05/05 18:04:51 [notice] 13240#13444: signal process started
+2017/05/05 18:04:51 [error] 13240#13444: CreateFile() "E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/05/05 18:04:55 [notice] 10576#9432: signal process started
+2017/05/05 18:04:55 [error] 10576#9432: CreateFile() "E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/05/05 18:05:32 [emerg] 12756#12640: pcre_compile() failed: nothing to repeat in "\.(*)$" at "*)$" in E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/conf/nginx.conf:91
+2017/05/05 18:05:45 [emerg] 12560#3392: pcre_compile() failed: nothing to repeat in "\.(*)$" at "*)$" in E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/conf/nginx.conf:91
+2017/05/05 18:06:13 [emerg] 14104#12792: pcre_compile() failed: nothing to repeat in "\.(*)$" at "*)$" in E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/conf/nginx.conf:91
+2017/05/05 18:07:33 [notice] 13532#13968: signal process started
+2017/05/05 18:08:37 [notice] 6816#8756: signal process started
+2017/05/05 18:08:37 [error] 6816#8756: CreateFile() "E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/05/05 18:13:18 [notice] 13440#8508: signal process started
+2017/05/05 18:14:35 [notice] 13768#10044: signal process started
+2017/05/05 18:18:07 [notice] 13308#6640: signal process started
+2017/05/05 18:18:07 [error] 13308#6640: CreateFile() "E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/05/05 18:18:46 [error] 12652#12764: *1 CreateFile() "E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/html/jeesite/f/list-2.html" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: www.zm.com, request: "GET /jeesite/f/list-2.html HTTP/1.1", host: "www.zm.com", referrer: "http://www.zm.com/f/"
+2017/05/05 18:19:17 [notice] 12892#9528: signal process started
+2017/05/05 18:19:59 [emerg] 13880#5456: "proxy_pass" cannot have URI part in location given by regular expression, or inside named location, or inside "if" statement, or inside "limit_except" block in E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/conf/nginx.conf:93
+2017/05/05 18:20:31 [emerg] 9832#13024: "proxy_pass" cannot have URI part in location given by regular expression, or inside named location, or inside "if" statement, or inside "limit_except" block in E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/conf/nginx.conf:93
+2017/05/05 18:21:02 [emerg] 10888#13748: "proxy_pass" cannot have URI part in location given by regular expression, or inside named location, or inside "if" statement, or inside "limit_except" block in E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/conf/nginx.conf:93
+2017/05/05 18:21:22 [emerg] 12676#11668: "proxy_pass" cannot have URI part in location given by regular expression, or inside named location, or inside "if" statement, or inside "limit_except" block in E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/conf/nginx.conf:93
+2017/05/05 18:23:09 [notice] 14084#10912: signal process started
+2017/05/05 18:23:09 [error] 14084#10912: CreateFile() "E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/05/05 18:23:36 [error] 13356#9436: *1 CreateFile() "E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/html/jeesite/f/list-2.html" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: www.zm.com, request: "GET /jeesite/f/list-2.html HTTP/1.1", host: "www.zm.com", referrer: "http://www.zm.com/f/"
+2017/05/05 18:24:07 [notice] 9648#9564: signal process started
+2017/05/05 18:24:30 [error] 13788#10924: *1 CreateFile() "E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/html/jeesite/f/index-1.html" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: www.zm.com, request: "GET /jeesite/f/index-1.html HTTP/1.1", host: "www.zm.com", referrer: "http://www.zm.com/jeesite/f"
+2017/05/05 18:24:34 [error] 13788#10924: *1 CreateFile() "E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/html/jeesite/f/list-2.html" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: www.zm.com, request: "GET /jeesite/f/list-2.html HTTP/1.1", host: "www.zm.com", referrer: "http://www.zm.com/jeesite/f"
+2017/05/05 18:27:40 [notice] 11332#12720: signal process started
+2017/05/05 18:27:40 [error] 11332#12720: CreateFile() "E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/05/05 18:28:06 [notice] 13364#11612: signal process started
+2017/05/05 18:28:06 [error] 13364#11612: CreateFile() "E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/05/05 18:31:09 [notice] 14136#1180: signal process started
+2017/05/05 18:32:02 [notice] 13676#8196: signal process started
+2017/05/05 18:32:44 [notice] 12880#13096: signal process started
+2017/05/05 18:32:44 [error] 12880#13096: CreateFile() "E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/05/05 18:33:24 [notice] 4880#11376: signal process started
+2017/05/05 18:34:39 [notice] 8028#6200: signal process started
+2017/05/05 18:34:39 [error] 8028#6200: CreateFile() "E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/05/05 18:38:15 [emerg] 9624#13752: directive "location" has no opening "{" in E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/conf/nginx.conf:93
+2017/05/05 18:38:41 [emerg] 8340#13488: directive "location" has no opening "{" in E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/conf/nginx.conf:93
+2017/05/05 18:38:59 [emerg] 10912#14088: directive "location" has no opening "{" in E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/conf/nginx.conf:93
+2017/05/05 18:39:14 [emerg] 13124#13272: directive "location" has no opening "{" in E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/conf/nginx.conf:93
+2017/05/05 18:39:19 [emerg] 11452#10864: directive "location" has no opening "{" in E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/conf/nginx.conf:93
+2017/05/05 18:39:54 [emerg] 7548#13712: directive "location" has no opening "{" in E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/conf/nginx.conf:92
+2017/05/05 18:41:20 [emerg] 8956#13900: directive "location" has no opening "{" in E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/conf/nginx.conf:92
+2017/05/05 18:43:14 [emerg] 14320#13092: "proxy_pass" cannot have URI part in location given by regular expression, or inside named location, or inside "if" statement, or inside "limit_except" block in E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/conf/nginx.conf:92
+2017/05/05 18:43:38 [emerg] 11336#14092: "proxy_pass" cannot have URI part in location given by regular expression, or inside named location, or inside "if" statement, or inside "limit_except" block in E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/conf/nginx.conf:92
+2017/05/05 18:43:49 [notice] 11332#10592: signal process started
+2017/05/05 18:46:31 [notice] 9704#12816: signal process started
+2017/05/05 19:19:41 [notice] 12024#14028: signal process started
+2017/05/09 15:32:25 [error] 13424#12748: *62 CreateFile() "E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2017/05/09 15:34:08 [notice] 17436#6652: signal process started
+2017/05/09 15:34:08 [error] 17436#6652: CreateFile() "E:\zhaomokeje\jeesite\Dependent\nginx-1.12.0/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/05/11 12:59:40 [error] 10052#9628: *1 CreateFile() "E:\zhaomokeje\jeesite\nginx/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/50x.html"
