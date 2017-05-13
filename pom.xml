@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	
-	<groupId>com.thinkgem.jeesite</groupId>
-	<artifactId>jeesite</artifactId>
+	<groupId>www.zhaomokeji.com</groupId>
+	<artifactId>zhaomokeji</artifactId>
 	<version>1.2.7</version>
 	<packaging>war</packaging>
 	
-	<name>JeeSite</name>
-	<url>http://thinkgem.github.com/jeesite</url>
+	<name>zhaomokeji</name>
+	<url>http://www.zhaomokeji.com/</url>
 	<inceptionYear>2012-2016</inceptionYear>
 	
 	<!-- 项目属性 -->

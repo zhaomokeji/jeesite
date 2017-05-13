@@ -1,0 +1,40 @@
+常用表
+cms_category
+
+cms_site
+
+sys_user
+
+//产品管理
+---支持API接口有没有新版本
+传送过来产品名称和版本号，判断有没有新版本
+zmkj_product
+
+产品名称
+操作系统
+版本号
+下载地址
+备注
+
+CREATE TABLE zmkj_product
+(
+	id varchar(64) NOT NULL COMMENT '编号',
+	os varchar(64) NOT NULL COMMENT '操作系统',
+	version varchar(255) NOT NULL COMMENT '版本号',
+	down_address varchar(260) COMMENT '下载地址',
+	create_by varchar(64) COMMENT '创建者',
+	create_date datetime COMMENT '创建时间',
+	update_by varchar(64) COMMENT '更新者',
+	update_date datetime COMMENT '更新时间',
+	remarks varchar(505) COMMENT '备注信息',
+	del_flag char(1) DEFAULT '0' NOT NULL COMMENT '删除标记',
+	PRIMARY KEY (id)
+) COMMENT = '产品表';
+
+
+---支持API活跃度检测
+程序启动时上传
+
+用户机器唯一标志 (根据MAC地址判断或者MAC+IP+计算机名)
+用户名
+上传时间
