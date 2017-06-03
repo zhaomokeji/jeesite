@@ -1,7 +1,7 @@
 /**
  * Copyright &copy; 2012-2016 <a href="https://github.com/thinkgem/jeesite">JeeSite</a> All rights reserved.
  */
-package com.thinkgem.jeesite.modules.zm.pingyin.web;
+package com.thinkgem.jeesite.modules.cms.web.front;
 
 import java.io.FileNotFoundException;
 
@@ -14,6 +14,8 @@ import com.github.stuxuhai.jpinyin.PinyinException;
 import com.github.stuxuhai.jpinyin.PinyinFormat;
 import com.github.stuxuhai.jpinyin.PinyinHelper;
 import com.thinkgem.jeesite.common.web.BaseController;
+import com.thinkgem.jeesite.modules.cms.entity.Site;
+import com.thinkgem.jeesite.modules.cms.utils.CmsUtils;
 import com.thinkgem.jeesite.modules.zm.pingyin.entity.Hanyu;
 import com.thinkgem.jeesite.modules.zm.pingyin.entity.PinYin;
 
@@ -24,18 +26,22 @@ import com.thinkgem.jeesite.modules.zm.pingyin.entity.PinYin;
  * @version 2017-5-2
  */
 @Controller
-@RequestMapping(value = "${adminPath}/zm/pinyin")
+@RequestMapping(value = "${frontPath}/pinyin")
 public class PinYinController extends BaseController {
 
 	
-	@RequestMapping(value = "form")
-	public String form(PinYin pinyin, Model model) {
+	@RequestMapping(value = "")
+	public String search(PinYin pinyin, Model model) {
+		Site site = CmsUtils.getSite(Site.defaultSiteId());
+		model.addAttribute("site", site);
 		model.addAttribute("pinyin", pinyin);
-		return "modules/zm/pinyinForm";
+		String path = "modules/cms/front/themes/"+site.getTheme()+"/pinyin";
+		//path =  "modules/cms/front/themes/"+site.getTheme()+"/frontIndex";
+		return path;
 	}
 
 	@RequestMapping(value = "trans")
-	public String save(PinYin pinyin, Model model, RedirectAttributes redirectAttributes) {
+	public String trans(PinYin pinyin, Model model, RedirectAttributes redirectAttributes) {
 //		Hanyu hanyu = new Hanyu();
 //		String pinYinContent = hanyu.getStringPinYin(pinyin.getContent());
 //		pinyin.setContentResult(pinYinContent);
@@ -51,12 +57,12 @@ public class PinYinController extends BaseController {
 		    try {
 		    	contentResult = PinyinHelper.convertToPinyinString(pinyin.getContent(), ",", PinyinFormat.WITH_TONE_MARK);
 		    	
-			} catch (PinyinException e) {
+			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		    pinyin.setContentResult(contentResult);
-		return form(pinyin, model);
+		return search(pinyin, model);
 	}
 	
 }
