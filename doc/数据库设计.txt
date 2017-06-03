@@ -16,11 +16,14 @@ zmkj_product
 下载地址
 备注
 
-CREATE TABLE zmkj_product
+//产品配置表
+CREATE TABLE zmkj_product_config
 (
-	id varchar(64) NOT NULL COMMENT '编号',
-	os varchar(64) NOT NULL COMMENT '操作系统',
+	id bigint(20) NOT NULL AUTO_INCREMENT COMMENT '编号',
+	name varchar(64) NOT NULL COMMENT '产品名称',
+	technology_platform varchar(64) NOT NULL COMMENT '技术平台',
 	version varchar(255) NOT NULL COMMENT '版本号',
+	version_num int(11) NOT NULL COMMENT '版本号NUM',
 	down_address varchar(260) COMMENT '下载地址',
 	create_by varchar(64) COMMENT '创建者',
 	create_date datetime COMMENT '创建时间',
@@ -29,8 +32,31 @@ CREATE TABLE zmkj_product
 	remarks varchar(505) COMMENT '备注信息',
 	del_flag char(1) DEFAULT '0' NOT NULL COMMENT '删除标记',
 	PRIMARY KEY (id)
-) COMMENT = '产品表';
+) COMMENT = '产品配置表';
 
+注：
+ version形式：1.2.3 转为version_num为 1*10000 + 2*100 +3=10203
+
+
+//产品活跃度统计表
+CREATE TABLE zmkj_product_activity
+(
+	id bigint(20) NOT NULL AUTO_INCREMENT COMMENT '编号',
+	userId varchar(64) COMMENT '用户标志',
+	clientId varchar(64) COMMENT '客户端标志',
+	name varchar(64) NOT NULL COMMENT '产品名称',
+	technology_platform varchar(64) NOT NULL COMMENT '技术平台',
+	os varchar(64) COMMENT '操作系统',
+	version varchar(50) NOT NULL COMMENT '版本号',
+	event_name varchar(100) COMMENT '活动事件名称',
+	create_by varchar(64) COMMENT '创建者',
+	create_date datetime COMMENT '创建时间',
+	update_by varchar(64) COMMENT '更新者',
+	update_date datetime COMMENT '更新时间',
+	remarks varchar(505) COMMENT '备注信息',
+	del_flag char(1) DEFAULT '0' NOT NULL COMMENT '删除标记',
+	PRIMARY KEY (id)
+) COMMENT = '产品活跃度统计表';
 
 ---支持API活跃度检测
 程序启动时上传

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkgem.jeesite.modules.zm.dao.ZmkjProductActivityDao">
+    
+	<sql id="zmkjProductActivityColumns">
+		a.id AS "id",
+		a.userid AS "userid",
+		a.clientid AS "clientid",
+		a.name AS "name",
+		a.technology_platform AS "technologyPlatform",
+		a.os AS "os",
+		a.version AS "version",
+		a.event_name AS "eventName",
+		a.create_by AS "createBy.id",
+		a.create_date AS "createDate",
+		a.update_by AS "updateBy.id",
+		a.update_date AS "updateDate",
+		a.remarks AS "remarks",
+		a.del_flag AS "delFlag"
+	</sql>
+	
+	<sql id="zmkjProductActivityJoins">
+	</sql>
+    
+	<select id="get" resultType="ZmkjProductActivity">
+		SELECT 
+			<include refid="zmkjProductActivityColumns"/>
+		FROM zmkj_product_activity a
+		<include refid="zmkjProductActivityJoins"/>
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="findList" resultType="ZmkjProductActivity">
+		SELECT 
+			<include refid="zmkjProductActivityColumns"/>
+		FROM zmkj_product_activity a
+		<include refid="zmkjProductActivityJoins"/>
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+			<if test="userid != null and userid != ''">
+				AND a.userid = #{userid}
+			</if>
+			<if test="clientid != null and clientid != ''">
+				AND a.clientid = #{clientid}
+			</if>
+			<if test="name != null and name != ''">
+				AND a.name LIKE 
+					<if test="dbName == 'oracle'">'%'||#{name}||'%'</if>
+					<if test="dbName == 'mssql'">'%'+#{name}+'%'</if>
+					<if test="dbName == 'mysql'">concat('%',#{name},'%')</if>
+			</if>
+			<if test="technologyPlatform != null and technologyPlatform != ''">
+				AND a.technology_platform = #{technologyPlatform}
+			</if>
+			<if test="os != null and os != ''">
+				AND a.os = #{os}
+			</if>
+			<if test="version != null and version != ''">
+				AND a.version = #{version}
+			</if>
+			<if test="eventName != null and eventName != ''">
+				AND a.event_name = #{eventName}
+			</if>
+		</where>
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date DESC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="findAllList" resultType="ZmkjProductActivity">
+		SELECT 
+			<include refid="zmkjProductActivityColumns"/>
+		FROM zmkj_product_activity a
+		<include refid="zmkjProductActivityJoins"/>
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+		</where>		
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date DESC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO zmkj_product_activity(
+			userid,
+			clientid,
+			name,
+			technology_platform,
+			os,
+			version,
+			event_name,
+			create_by,
+			create_date,
+			update_by,
+			update_date,
+			remarks,
+			del_flag
+		) VALUES (
+			#{userid},
+			#{clientid},
+			#{name},
+			#{technologyPlatform},
+			#{os},
+			#{version},
+			#{eventName},
+			#{createBy.id},
+			#{createDate},
+			#{updateBy.id},
+			#{updateDate},
+			#{remarks},
+			#{delFlag}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE zmkj_product_activity SET 	
+			userid = #{userid},
+			clientid = #{clientid},
+			name = #{name},
+			technology_platform = #{technologyPlatform},
+			os = #{os},
+			version = #{version},
+			event_name = #{eventName},
+			update_by = #{updateBy.id},
+			update_date = #{updateDate},
+			remarks = #{remarks}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="delete">
+		UPDATE zmkj_product_activity SET 
+			del_flag = #{DEL_FLAG_DELETE}
+		WHERE id = #{id}
+	</update>
+	
+</mapper>
