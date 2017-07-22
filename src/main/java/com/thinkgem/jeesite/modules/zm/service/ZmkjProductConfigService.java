@@ -5,6 +5,7 @@ package com.thinkgem.jeesite.modules.zm.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,6 +23,9 @@ import com.thinkgem.jeesite.modules.zm.dao.ZmkjProductConfigDao;
 @Transactional(readOnly = true)
 public class ZmkjProductConfigService extends CrudService<ZmkjProductConfigDao, ZmkjProductConfig> {
 
+	@Autowired
+	ZmkjProductConfigDao zmkjProductConfigDao;
+	
 	public ZmkjProductConfig get(String id) {
 		return super.get(id);
 	}
@@ -32,6 +36,14 @@ public class ZmkjProductConfigService extends CrudService<ZmkjProductConfigDao, 
 	
 	public Page<ZmkjProductConfig> findPage(Page<ZmkjProductConfig> page, ZmkjProductConfig zmkjProductConfig) {
 		return super.findPage(page, zmkjProductConfig);
+	}
+	
+	public ZmkjProductConfig getNewVersion(String productName, String technologyPlatform, Integer versionNum){
+		ZmkjProductConfig zmkjProductConfig = new ZmkjProductConfig();
+		zmkjProductConfig.setName(productName);
+		zmkjProductConfig.setTechnologyPlatform(technologyPlatform);
+		zmkjProductConfig.setVersionNum(versionNum);
+		return zmkjProductConfigDao.getNewVersion(zmkjProductConfig);
 	}
 	
 	@Transactional(readOnly = false)

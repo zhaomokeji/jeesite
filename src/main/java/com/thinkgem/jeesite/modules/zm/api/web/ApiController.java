@@ -53,10 +53,11 @@ public class ApiController extends BaseController {
 			@RequestParam(value = "technologyPlatform") String technologyPlatform,
 			@RequestParam(value = "os") String os,
 			@RequestParam(value = "version") String version,
+			@RequestParam(value = "versionNum") Integer versionNum,
 			@RequestParam(value = "eventName") String eventName) {
 		 Map<String,Object> resMap=new HashMap<String, Object>();
          resMap.put("code",1);
-		if(eventName == "start-up"){
+		if(eventName.equalsIgnoreCase("start-up")){
 			ZmkjProductActivity zmkjProductActivity = new ZmkjProductActivity();
 			zmkjProductActivity.setUserid(userId);
 			zmkjProductActivity.setClientid(clientId);
@@ -66,20 +67,17 @@ public class ApiController extends BaseController {
 			zmkjProductActivity.setVersion(version);
 			zmkjProductActivity.setEventName(eventName);
 			zmkjProductActivityService.save(zmkjProductActivity);
+			resMap.put("msg","SUCCESS");
 		} 
 		else //check-for-updates
 		{
-			ZmkjProductConfig zmkjProductConfig = new ZmkjProductConfig(); 
-			zmkjProductConfig.setName(productName);
-			zmkjProductConfig.setTechnologyPlatform(technologyPlatform);
-			zmkjProductConfig.setVersion(version);
-			List<ZmkjProductConfig> zmkjProductConfigList =  zmkjProductConfigService.findList(zmkjProductConfig);
-			if(zmkjProductConfigList.size() > 0){
-				resMap.put("insPackageAddress","地址："+zmkjProductConfigList.get(0).getDownAddress());
+			ZmkjProductConfig zmkjProductConfig = zmkjProductConfigService.getNewVersion(productName, technologyPlatform, versionNum); 
+			if(zmkjProductConfig != null){
+				resMap.put("insPackageAddress","地址："+zmkjProductConfig.getDownAddress());
 			} else {
 				resMap.put("insPackageAddress","已是最新版本!");
 			}
-			
+			resMap.put("msg","SUCCESS");
 		}
 		
 		//MAC IP HOSTNAME OTHERINFO

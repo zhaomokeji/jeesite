@@ -126,6 +126,13 @@
 		WHERE id = #{id}
 	</update>
 	
+	<select id="getNewVersion" parameterType="ZmkjProductConfig" resultType="ZmkjProductConfig">
+		SELECT 
+			<include refid="zmkjProductConfigColumns"/>
+		FROM zmkj_product_config a
+		WHERE a.name = #{name} and technology_platform = #{technologyPlatform} and version_num > #{versionNum}
+	</select>
+	
 	<update id="delete">
 		UPDATE zmkj_product_config SET 
 			del_flag = #{DEL_FLAG_DELETE}
