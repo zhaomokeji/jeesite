@@ -13,5 +13,6 @@ import com.thinkgem.jeesite.modules.zm.entity.ZmkjProductConfig;
  * @version 2017-06-03
  */
 @MyBatisDao
-public interface ZmkjProductConfigDao extends CrudDao<ZmkjProductConfig> {
+public interface ZmkjProductConfigExDao {
+	public ZmkjProductConfig getNewVersion(ZmkjProductConfig zmkjProductConfigm);
 }

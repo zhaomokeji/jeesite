@@ -54,7 +54,8 @@ public class ApiController extends BaseController {
 			@RequestParam(value = "os") String os,
 			@RequestParam(value = "version") String version,
 			@RequestParam(value = "versionNum") Integer versionNum,
-			@RequestParam(value = "eventName") String eventName) {
+			@RequestParam(value = "eventName") String eventName,
+			@RequestParam(value = "ip") String ip) {
 		 Map<String,Object> resMap=new HashMap<String, Object>();
          resMap.put("code",1);
 		if(eventName.equalsIgnoreCase("start-up")){
@@ -66,6 +67,7 @@ public class ApiController extends BaseController {
 			zmkjProductActivity.setOs(os);
 			zmkjProductActivity.setVersion(version);
 			zmkjProductActivity.setEventName(eventName);
+			zmkjProductActivity.setIp(ip);
 			zmkjProductActivityService.save(zmkjProductActivity);
 			resMap.put("msg","SUCCESS");
 		} 

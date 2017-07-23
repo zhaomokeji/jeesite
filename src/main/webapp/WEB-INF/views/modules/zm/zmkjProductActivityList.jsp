@@ -46,6 +46,9 @@
 			<li><label>活动事件名称：</label>
 				<form:input path="eventName" htmlEscape="false" maxlength="100" class="input-medium"/>
 			</li>
+			<li><label>ip地址：</label>
+				<form:input path="ip" htmlEscape="false" maxlength="100" class="input-medium"/>
+			</li>
 			<li class="btns"><input id="btnSubmit" class="btn btn-primary" type="submit" value="查询"/></li>
 			<li class="clearfix"></li>
 		</ul>
@@ -61,6 +64,7 @@
 				<th>操作系统</th>
 				<th>版本号</th>
 				<th>活动事件名称</th>
+				<th>ip地址</th>
 				<th>更新时间</th>
 				<th>备注信息</th>
 				<shiro:hasPermission name="zm:zmkjProductActivity:edit"><th>操作</th></shiro:hasPermission>
@@ -89,6 +93,9 @@
 				</td>
 				<td>
 					${zmkjProductActivity.eventName}
+				</td>
+				<td>
+					${zmkjProductActivity.ip}
 				</td>
 				<td>
 					<fmt:formatDate value="${zmkjProductActivity.updateDate}" pattern="yyyy-MM-dd HH:mm:ss"/>

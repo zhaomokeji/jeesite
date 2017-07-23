@@ -13,6 +13,7 @@ import com.thinkgem.jeesite.common.persistence.Page;
 import com.thinkgem.jeesite.common.service.CrudService;
 import com.thinkgem.jeesite.modules.zm.entity.ZmkjProductConfig;
 import com.thinkgem.jeesite.modules.zm.dao.ZmkjProductConfigDao;
+import com.thinkgem.jeesite.modules.zm.dao.ZmkjProductConfigExDao;
 
 /**
  * 产品配置Service
@@ -25,6 +26,9 @@ public class ZmkjProductConfigService extends CrudService<ZmkjProductConfigDao, 
 
 	@Autowired
 	ZmkjProductConfigDao zmkjProductConfigDao;
+	
+	@Autowired
+	ZmkjProductConfigExDao zmkjProductConfigExDao;
 	
 	public ZmkjProductConfig get(String id) {
 		return super.get(id);
@@ -43,7 +47,7 @@ public class ZmkjProductConfigService extends CrudService<ZmkjProductConfigDao, 
 		zmkjProductConfig.setName(productName);
 		zmkjProductConfig.setTechnologyPlatform(technologyPlatform);
 		zmkjProductConfig.setVersionNum(versionNum);
-		return zmkjProductConfigDao.getNewVersion(zmkjProductConfig);
+		return zmkjProductConfigExDao.getNewVersion(zmkjProductConfig);
 	}
 	
 	@Transactional(readOnly = false)

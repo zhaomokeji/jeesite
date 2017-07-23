@@ -22,6 +22,7 @@ public class ZmkjProductActivity extends DataEntity<ZmkjProductActivity> {
 	private String os;		// 操作系统
 	private String version;		// 版本号
 	private String eventName;		// 活动事件名称
+	private String ip;		// ip地址
 	
 	public ZmkjProductActivity() {
 		super();
@@ -92,6 +93,15 @@ public class ZmkjProductActivity extends DataEntity<ZmkjProductActivity> {
 
 	public void setEventName(String eventName) {
 		this.eventName = eventName;
+	}
+	
+	@Length(min=0, max=100, message="ip地址长度必须介于 0 和 100 之间")
+	public String getIp() {
+		return ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
 	}
 	
 }
